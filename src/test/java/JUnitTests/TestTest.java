@@ -1,4 +1,4 @@
-package tests;
+package JUnitTests;
 
 import contextMy.TAContext;
 import org.junit.jupiter.api.Test;

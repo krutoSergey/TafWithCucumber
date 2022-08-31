@@ -1,4 +1,4 @@
-package tests;
+package JUnitTests;
 
 import enums.Users;
 import io.qameta.allure.Feature;
