@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class TAContext {
     private static ThreadLocal<TAContext> instance = ThreadLocal.withInitial(() -> new TAContext());
-    protected ScenarioDefinitions scenarioDefinitions;
+    private ScenarioDefinitions scenarioDefinitions;
     private Map<ContextType, Object> contexts = new HashMap();
 
     private TAContext(){
@@ -18,7 +18,7 @@ public class TAContext {
         return instance.get();
     }
 
-    protected Map<ContextType, Object> getContext() {
+    private Map<ContextType, Object> getContext() {
         return this.contexts;
     }
 
