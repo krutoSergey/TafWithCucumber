@@ -8,15 +8,15 @@ import java.util.Map;
 public class TAContext {
     private static ThreadLocal<TAContext> instance = ThreadLocal.withInitial(() -> new TAContext());
     protected ScenarioDefinitions scenarioDefinitions;
+    private Map<ContextType, Object> contexts = new HashMap();
 
     private TAContext(){
-        setScenarioDefinitions(new ScenarioDefinitions());
+        scenarioDefinitions = new ScenarioDefinitions();
     }
+
     public static TAContext getInstance() {
         return instance.get();
     }
-
-    private Map<ContextType, Object> contexts = new HashMap();
 
     protected Map<ContextType, Object> getContext() {
         return this.contexts;
@@ -24,9 +24,5 @@ public class TAContext {
 
     public UserContext getUserContext() {
         return (UserContext)contexts.computeIfAbsent(ContextType.USER, (e) -> new UserContext());
-    }
-
-    private void setScenarioDefinitions(final ScenarioDefinitions scenarioDefinitions) {
-        this.scenarioDefinitions = scenarioDefinitions;
     }
 }
