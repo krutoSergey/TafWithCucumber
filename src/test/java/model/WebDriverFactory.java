@@ -16,7 +16,7 @@ public class WebDriverFactory {
     }
 
     private static WebDriver setup() {
-        switch (config.getWebConfig().getBrowser()){
+        switch (config.getWebConfig().getBrowserType()){
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
@@ -27,7 +27,7 @@ public class WebDriverFactory {
         }
     }
 
-    public enum Browser{
+    public enum BrowserType {
         CHROME, FIREFOX
     }
 

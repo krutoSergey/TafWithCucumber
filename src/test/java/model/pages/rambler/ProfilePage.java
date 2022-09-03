@@ -1,4 +1,4 @@
-package model.page.rambler;
+package model.pages.rambler;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;

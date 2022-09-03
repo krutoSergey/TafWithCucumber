@@ -1,4 +1,4 @@
-package model.page.rambler;
+package model.pages.rambler;
 
 import contextMy.TAContext;
 import io.github.bonigarcia.wdm.WebDriverManager;

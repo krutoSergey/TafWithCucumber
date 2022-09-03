@@ -5,8 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
-import model.page.rambler.LoginPage;
-import model.page.rambler.SearchPage;
+import model.pages.rambler.LoginPage;
+import model.pages.rambler.SearchPage;
 import org.junit.jupiter.api.Assertions;
 import steps.BaseSteps;
 

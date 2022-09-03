@@ -1,4 +1,4 @@
-package model.page.rambler;
+package model.pages.rambler;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.NoSuchElementException;

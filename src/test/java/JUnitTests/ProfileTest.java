@@ -6,7 +6,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import model.page.rambler.LoginPage;
+import model.pages.rambler.LoginPage;
 
 @DisplayName("Тесты на юзер профайл")
 @Feature("User profile feature")

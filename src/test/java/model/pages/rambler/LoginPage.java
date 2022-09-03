@@ -1,4 +1,4 @@
-package model.page.rambler;
+package model.pages.rambler;
 
 import enums.Users;
 import io.qameta.allure.Attachment;
