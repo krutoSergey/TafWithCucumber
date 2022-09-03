@@ -1,6 +1,5 @@
-package model.page;
+package model.page.rambler;
 
-import contextMy.TAContext;
 import enums.Users;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;

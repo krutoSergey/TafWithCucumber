@@ -32,18 +32,18 @@ public class WebDriverFactory {
     }
 
     private static ChromeDriver getChromeDriver(){
-        String chromeBinaryName = config.getWebConfig().getWebDriverPath();
+        String driverPath = config.getWebConfig().getWebDriverPath();
 
         Boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
         if(isWindows) {
-            chromeBinaryName += "chromedriver.exe";
+            driverPath += "chromedriver.exe";
         }
         else {
-            chromeBinaryName += "chromedriver";
+            driverPath += "chromedriver";
         }
 
 //        System.setProperty("webdriver.chrome.driver", Resources.getResource(chromeBinaryName).getPath());
-        System.setProperty("webdriver.chrome.driver", chromeBinaryName);
+        System.setProperty("webdriver.chrome.driver", driverPath);
         return new ChromeDriver();
     }
 }

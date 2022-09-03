@@ -1,4 +1,4 @@
-package model.page;
+package model.page.rambler;
 
 import contextMy.TAContext;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -24,14 +24,14 @@ import java.time.Duration;
 
 @ExtendWith(ScreenshotExtension.class)
 public abstract class BasePage {
-    protected static final String BASE_URL = "https://www.rambler.ru";
+    private static TestConfigFactory config = TestConfigFactory.getInstance();
+    protected static final String BASE_URL = config.getWebConfig().getBaseUrl();
     private static final Duration DEFAULT_TIMEOUT_SECONDS = Duration.ofSeconds(10);
 
     protected WebDriverWait wait;
     protected JSExecutor js;
     protected WebDriver driver;
 
-    private static TestConfigFactory config = TestConfigFactory.getInstance();
 
 //    @BeforeEach
 //    void setup() {

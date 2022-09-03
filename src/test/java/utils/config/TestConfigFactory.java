@@ -4,24 +4,31 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigBeanFactory;
 import com.typesafe.config.ConfigFactory;
 
-public class TestConfigFactory {
-    private volatile Config config;
-    private volatile WebConfig webConfig;
+public final class TestConfigFactory {
+    private static volatile Config config;
+    private static volatile WebConfig webConfig;
+    private static String CONFIG_FILE_NAME = "test.conf";
+    private static String WEB_CONFIG_SECTION = "web";
+    private static final TestConfigFactory instance = new TestConfigFactory();
 
     private TestConfigFactory(){
         config = ConfigFactory.systemProperties()
                 .withFallback(ConfigFactory.systemEnvironment())
-                .withFallback(ConfigFactory.parseResources("test.conf"));
+                .withFallback(ConfigFactory.parseResources(CONFIG_FILE_NAME));
     }
 
-    public synchronized WebConfig getWebConfig(){
+    public static synchronized WebConfig getWebConfig(){
         if(webConfig == null){
-            webConfig = ConfigBeanFactory.create(config.getConfig("web"), WebConfig.class);
+            synchronized (TestConfigFactory.class) {
+                if(webConfig == null) {
+                    webConfig = ConfigBeanFactory.create(config.getConfig(WEB_CONFIG_SECTION), WebConfig.class);
+                }
+            }
         }
         return webConfig;
     }
 
     public synchronized static TestConfigFactory getInstance(){
-        return new TestConfigFactory();
+        return instance;
     }
 }

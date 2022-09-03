@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TAContext {
-    private static ThreadLocal<TAContext> instance = ThreadLocal.withInitial(() -> new TAContext());
+    private static final ThreadLocal<TAContext> instance = ThreadLocal.withInitial(() -> new TAContext());
     private ScenarioDefinitions scenarioDefinitions;
     private Map<ContextType, Object> contexts = new HashMap();
 

@@ -1,13 +1,14 @@
-package steps;
+package steps.rambler;
 
 import enums.Users;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
-import model.page.LoginPage;
-import model.page.SearchPage;
+import model.page.rambler.LoginPage;
+import model.page.rambler.SearchPage;
 import org.junit.jupiter.api.Assertions;
+import steps.BaseSteps;
 
 public class RamblerLoginSteps extends BaseSteps {
 

@@ -7,7 +7,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import model.page.LoginPage;
+import model.page.rambler.LoginPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
