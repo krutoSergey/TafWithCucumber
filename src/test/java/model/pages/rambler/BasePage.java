@@ -25,7 +25,7 @@ import java.time.Duration;
 @ExtendWith(ScreenshotExtension.class)
 public abstract class BasePage {
     private static TestConfigFactory config = TestConfigFactory.getInstance();
-    protected static final String BASE_URL = config.getWebConfig().getBaseUrl();
+    protected static final String BASE_URL = config.getWebConfig().getBaseUrl_rambler();
     private static final Duration DEFAULT_TIMEOUT_SECONDS = Duration.ofSeconds(10);
 
     protected WebDriverWait wait;

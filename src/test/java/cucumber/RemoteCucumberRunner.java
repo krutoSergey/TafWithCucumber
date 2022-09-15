@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = "src/test/resources/features/rambler",
         glue = "steps",
-        tags = "@local" )
+        tags = "@local",
+        snippets = CucumberOptions.SnippetType.CAMELCASE
+)
 
 public class RemoteCucumberRunner {
 }

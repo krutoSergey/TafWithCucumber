@@ -1,6 +1,6 @@
 Feature: Login tests
 
-  @local
+
   Scenario: Successful login with login and password
   Given Open rambler login page
   Then Check that rambler login page is opened
