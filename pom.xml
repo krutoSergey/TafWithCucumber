@@ -58,7 +58,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -169,10 +169,10 @@
         <!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar"-->
                             </argLine>
                             <properties>
-                                <property>
-                                    <name>RunListener</name>
-                                    <value>/src/test/java/cucumber/LocalCucumberRunner.java</value>
-                                </property>
+<!--                                <property>-->
+<!--                                    <name>RunListener</name>-->
+<!--                                    <value>/src/test/java/cucumber/LocalCucumberRunner.java</value>-->
+<!--                                </property>-->
                             </properties>
                             <systemProperties>
                                 <property>
@@ -192,35 +192,35 @@
                             </dependency>
                         </dependencies>
                     </plugin>
-<!--                    <plugin>-->
-<!--                        <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                        <version>3.0.0-M7</version>-->
-<!--                        <configuration>-->
-<!--                            <includes>-->
-<!--                                <include>**/LocalCucumberRunner.java</include>-->
-<!--                            </includes>-->
-<!--                            <testFailureIgnore>false</testFailureIgnore>-->
-<!--                            <argLine>-->
-<!--                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
-<!--                            </argLine>-->
-<!--&lt;!&ndash;                            <systemProperties>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <property>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <name>junit.jupiter.extensions.autodetection.enabled</name>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <value>true</value>&ndash;&gt;-->
-<!--&lt;!&ndash;                                </property>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </systemProperties>&ndash;&gt;-->
-<!--                            <systemPropertyVariables>-->
-<!--                                <allure.results.directory>target/allure-results</allure.results.directory>-->
-<!--                            </systemPropertyVariables>-->
-<!--                        </configuration>-->
-<!--                        <dependencies>-->
-<!--                            <dependency>-->
-<!--                                <groupId>org.aspectj</groupId>-->
-<!--                                <artifactId>aspectjweaver</artifactId>-->
-<!--                                <version>${aspectj.version}</version>-->
-<!--                            </dependency>-->
-<!--                        </dependencies>-->
-<!--                    </plugin>-->
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M7</version>
+                        <configuration>
+                            <includes>
+                                <include>**/LocalCucumberRunner.java</include>
+                            </includes>
+                            <testFailureIgnore>false</testFailureIgnore>
+                            <argLine>
+                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                            </argLine>
+<!--                            <systemProperties>-->
+<!--                                <property>-->
+<!--                                    <name>junit.jupiter.extensions.autodetection.enabled</name>-->
+<!--                                    <value>true</value>-->
+<!--                                </property>-->
+<!--                            </systemProperties>-->
+                            <systemPropertyVariables>
+                                <allure.results.directory>target/allure-results</allure.results.directory>
+                            </systemPropertyVariables>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.aspectj</groupId>
+                                <artifactId>aspectjweaver</artifactId>
+                                <version>${aspectj.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
